@@ -3,10 +3,13 @@ import streamlit as st
 import matplotlib.pyplot as plt
 iris = sns.load_dataset('iris')
 
-st.dataframe(iris.groupby('species').mean())
-
 st.title('IRIS 데이터 예제')
 "이 예제는 seaborn iris 데이터를 다양한 형식으로 보여주는 것입니다."
+
+st.header("종별 평균")
+st.dataframe(iris.groupby('species').mean())
+st.bar_chart(iris.groupby('species').mean())
+
 st.header('원본 데이터')
 st.dataframe(iris)
 st.header('sepal_width vs. sepal_length')
